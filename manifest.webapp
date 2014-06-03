@@ -1,0 +1,27 @@
+{
+	"name": "QR Reader",
+	"description": "Simple QR-Code and Barcode Scanner",
+	"launch_path": "/index.html",
+	"developer": {
+		"name": "André Fiedler",
+		"url": "https://github.com/SunboX/QR-Reader"
+	},
+	"default_locale": "en",
+	"permissions": {
+		"video-capture": {
+			"description": "Reading Codes using the Camera"
+		}
+	},
+	"icons": {
+		"16": "/icons/16.png",
+		"30": "/icons/30.png",
+		"32": "/icons/32.png",
+		"48": "/icons/48.png",
+		"60": "/icons/60.png",
+		"64": "/icons/64.png",
+		"90": "/icons/90.png",
+		"120": "/icons/120.png",
+		"128": "/icons/128.png",
+		"256": "/icons/256.png"
+	}
+}

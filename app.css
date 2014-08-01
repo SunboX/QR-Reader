@@ -1,73 +1,80 @@
-
-body {
-    font-family: sans-serif;
-    height: 100%;
-    background: #000;
+body
+{
+	background: #000;
+	font-family: sans-serif;
+	height: 100%;
 }
 
-#video {
-    position: fixed;
-    right: 0;
-    bottom: 0;
-    min-width: 100%;
-    min-height: 100%;
-    width: auto;
-    height: auto;
+#video
+{
+	bottom: 0;
+	height: auto;
+	min-height: 100%;
+	min-width: 100%;
+	position: fixed;
+	right: 0;
+	width: auto;
 }
 
-#startDecoding {
-    background: #0095DD;
-    color: #fff;
-    border-radius: 40px;
-    padding: 20px;
-    font-family: Arial, sans;
-    width: 150px;
-    text-align: center;
-    font-size: 20px;
-    position: fixed;
-    left: 50%;
-    top: 50%;
-    margin: -30px 0 0 -95px;
+#startDecoding
+{
+	background: #0095DD;
+	border-radius: 40px;
+	color: #fff;
+	font-family: Arial, sans;
+	font-size: 20px;
+	left: 50%;
+	margin: -30px 0 0 -95px;
+	padding: 20px;
+	position: fixed;
+	text-align: center;
+	top: 50%;
+	width: 150px;
 }
 
 #corner-nw,
 #corner-no,
 #corner-so,
-#corner-sw {
-    position: fixed;
-    width: 30px;
-    height: 30px;
-    border: #fff 6px solid;
+#corner-sw
+{
+	border: #fff 6px solid;
+	height: 30px;
+	position: fixed;
+	width: 30px;
 }
 
-#corner-nw {
-    border-right: 0;
-    border-bottom: 0;
-    border-top-left-radius: 20px;
-    top: 20px;
-    left: 20px;
+#corner-nw
+{
+	border-bottom: 0;
+	border-right: 0;
+	border-top-left-radius: 20px;
+	left: 20px;
+	top: 20px;
 }
 
-#corner-no {
-    border-left: 0;
-    border-bottom: 0;
-    border-top-right-radius: 20px;
-    top: 20px;
-    right: 20px;
+#corner-no
+{
+	border-bottom: 0;
+	border-left: 0;
+	border-top-right-radius: 20px;
+	right: 20px;
+	top: 20px;
 }
 
-#corner-so {
-    border-top: 0;
-    border-left: 0;
-    border-bottom-right-radius: 20px;
-    bottom: 20px;
-    right: 20px;
+#corner-so
+{
+	border-bottom-right-radius: 20px;
+	border-left: 0;
+	border-top: 0;
+	bottom: 20px;
+	right: 20px;
 }
 
-#corner-sw {
-    border-right: 0;
-    border-top: 0;
-    border-bottom-left-radius: 20px;
-    bottom: 20px;
-    left: 20px;
+#corner-sw
+{
+	border-bottom-left-radius: 20px;
+	border-right: 0;
+	border-top: 0;
+	bottom: 20px;
+	left: 20px;
 }

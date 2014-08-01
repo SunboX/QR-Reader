@@ -78,7 +78,7 @@ navigator.getMedia(
 
         video.play();
 
-        decodeBar();
+        DecodeBar();
     },
     function(err) {
         console.log('An error occured! ' + err);
@@ -102,7 +102,7 @@ function receiveMessage(e) {
 
     if (e.data.success === true && e.data.result.length > 0) {
 
-        stopDecoding();
+        StopDecoding();
 
         window.navigator.vibrate(200);
         if (beepSoundCanPlay) {
@@ -253,16 +253,14 @@ function receiveMessage(e) {
                 }
             });
         }
-
         // wifi
         //"WIFI:T:WEP;S:Namenettz;P:gergergegeg;H:true"
 
         // geolocation
         //"geo:48,12,400"
-
     } else {
 
-        decodeBar();
+        DecodeBar();
 
     }
 }
@@ -287,19 +285,19 @@ if (typeof document.hidden !== 'undefined') { // Opera 12.10 and Firefox 18 and 
 // if the page is shown, play the decoder worker
 function handleVisibilityChange() {
     if (document[hidden]) {
-        console.log('hidden');
-        stopDecoding();
+        //console.log('hidden');
+        StopDecoding();
     } else {
-        console.log('shown');
-        decodeBar();
+        //console.log('shown');
+        DecodeBar();
     }
 }
 
 document.addEventListener(visibilityChange, handleVisibilityChange, false);
 
 window.onfocus = function() {
-    console.log('focus');
-    decodeBar();
+    //console.log('focus');
+    DecodeBar();
 };
 
 // Firefox Bug 879717 - drawImage on MediaStream assigned to <video> stopped working again
@@ -321,11 +319,11 @@ function drawVideo() {
     }
 }
 
-document.getElementById('touchstart').addEventListener(clickEventName, function () {
-    decodeBar();
+document.getElementById('startDecoding').addEventListener(clickEventName, function () {
+    DecodeBar();
 }, false);
 
-function decodeBar() {
+function DecodeBar() {
     if (workerCount === 0) {
         if (decodeWorker === null) {
             decodeWorker = new Worker('decoder.js');
@@ -338,7 +336,7 @@ function decodeBar() {
     }
 }
 
-function stopDecoding() {
+function StopDecoding() {
     workerCount = 0;
     document.getElementById('startDecoding').hidden = false;
     if (decodeWorker === null) return;
@@ -346,7 +344,7 @@ function stopDecoding() {
     decodeWorker = null;
 }
 
-// TODO: add flash light support
+
 /*
 currentCamera.flashMode = (torched) ? 'torch' : 'auto';
 

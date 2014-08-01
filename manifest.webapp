@@ -1,6 +1,7 @@
 {
 	"name": "QR Reader",
 	"description": "Simple QR-Code and Barcode Scanner",
+	"version": "1.0.1",
 	"launch_path": "/index.html",
 	"developer": {
 		"name": "André Fiedler",

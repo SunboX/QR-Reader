@@ -24,5 +24,7 @@
 		"120": "/icons/120.png",
 		"128": "/icons/128.png",
 		"256": "/icons/256.png"
-	}
+	},
+    "orientation": "portrait-primary",
+    "fullscreen": "true"
 }

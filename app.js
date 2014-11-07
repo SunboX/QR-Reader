@@ -245,13 +245,7 @@ function receiveMessage(e) {
 		*/
         // text
         else {
-            new MozActivity({
-                name: 'view',
-                data: {
-                    type: 'url',
-                    url: 'http://www.google.com/search?q=' + encodeURIComponent(result)
-                }
-            });
+            prompt('Text', result);
         }
         // wifi
         //"WIFI:T:WEP;S:Namenettz;P:gergergegeg;H:true"

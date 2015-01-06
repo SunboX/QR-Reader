@@ -8,8 +8,9 @@
 		"url": "https://github.com/SunboX/QR-Reader"
 	},
 	"default_locale": "en",
+	"type": "privileged",
 	"permissions": {
-		"video-capture": {
+		"camera": {
 			"description": "Reading Codes using the Camera"
 		}
 	},

@@ -7,9 +7,13 @@ body
 
 #video
 {
+	bottom: 0;
+	height: auto;
+	min-height: 100%;
+	min-width: 100%;
 	position: fixed;
-	top: 0;
-	left: 0;
+	right: 0;
+	width: auto;
 }
 
 #startDecoding

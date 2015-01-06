@@ -1,54 +1,31 @@
+/*
 
+The MIT License (MIT)
 
-function stopStream() {
-    video.mozSrcObject = null;
-}
+Copyright (c) 2014 André Fiedler
 
-self.mozCamera.takePicture(config).then(function onSuccess(blob) {
-    var image = { blob: blob };
-    self.resumePreview();
-    self.set('focus', 'none');
-    self.emit('newimage', image);
-    debug('success taking picture');
-    complete();
-}, function onError(error) {
-    var title = navigator.mozL10n.get('error-saving-title');
-    var text = navigator.mozL10n.get('error-saving-text');
-    // if taking a picture fails because there's
-    // already a picture being taken we ignore it.
-    if (error === 'TakePictureAlreadyInProgress') {
-        complete();
-    } else {
-        alert(title + '. ' + text);
-        debug('error taking picture');
-        complete();
-    }
-});
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
 
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
 
-this.mozCamera.focusMode = 'auto';
-//this.mozCamera.resumeContinuousFocus();
-this.mozCamera.autoFocus().then(function onSuccess(success) {
-    if (success) {
-        self.focused = true;
-        done('focused');
-    } else {
-        self.focused = false;
-        done('failed');
-    }
-}, function onError(err) {
-    self.focused = false;
-    if (err.name === 'NS_ERROR_IN_PROGRESS') {
-        done('interrupted');
-    } else {
-        done('error');
-    }
-});
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
 
+*/
 
-
-
-
+var video = document.querySelector('#video'),
+	canvas = document.createElement('canvas');
 
 var ctx = canvas.getContext('2d'),
     streaming = false,
